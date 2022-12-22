@@ -5,7 +5,7 @@ echo --% >/dev/null;: ' | out-null
 #
 # sh part
 #
-dpkg-query -l libfuse2
+apt-cache show libfuse2
 if [ $? -eq 0 ]
 then
 sudo add-apt-repository universe
