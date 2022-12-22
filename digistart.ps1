@@ -29,7 +29,7 @@ sudo udevadm control --reload-rules
 cd ~/Desktop
 ./Arduino.AppImage &
 PSID=$!
-sleep 10
+sleep 20
 kill -9 $PSID
 
 # Edit the config files and inject the patched micronucleus
