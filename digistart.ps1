@@ -5,6 +5,10 @@ echo --% >/dev/null;: ' | out-null
 #
 # sh part
 #
+# Cleanup:
+rm -rf ~/.arduino15
+rm -rf ~/.arduinoIDE
+
 apt-cache show libfuse2
 if [ ! $? -eq 0 ]
 then
@@ -27,7 +31,7 @@ sudo udevadm control --reload-rules
 
 # Make the config files exist
 cd ~/Desktop
-echo "\n\n\n\nThe Arduino IDE will open soon, but when it loads to the main screen and you can select a board, close it!\n\n\n\n"
+echo -e "\n\n\n\n\033[7;31mThe Arduino IDE will open soon. When it loads enough to edit text, close the window but keep this script running!\033[0m\n\n\n\n"
 sleep 10
 ./Arduino.AppImage
 
