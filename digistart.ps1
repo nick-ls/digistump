@@ -8,10 +8,9 @@ echo --% >/dev/null;: ' | out-null
 dpkg-query -l libfuse2
 if [ $? -eq 0 ]
 then
-sudo apt-get install fuse libfuse2 libusb-0.1-4 -y
-else
-sudo apt-get install fuse3 libfuse3-3 libusb-0.1-4 -y
+sudo add-apt-repository universe
 fi
+sudo apt-get install fuse libfuse2 libusb-0.1-4 -y
 URL=https://downloads.arduino.cc/arduino-ide/arduino-ide_2.0.3_Linux_64bit.AppImage
 DIGI=https://gist.githubusercontent.com/nick-ls/7df7efc04a17b7256eaaffb8cb82ed6d/raw/5e51cb7b06501db8d3747aaa3210e0ba44cc6ea7/package_digistump_index.json
 ESC="https:\/\/gist.githubusercontent.com\/nick-ls\/7df7efc04a17b7256eaaffb8cb82ed6d\/raw\/5e51cb7b06501db8d3747aaa3210e0ba44cc6ea7\/package_digistump_index.json"
@@ -77,5 +76,4 @@ Start-Process "$($tempFolderPath)\drivers\Digistump Drivers\DPinst64.exe" -Wait 
 
 echo "Running installer..."
 & "$($tempFolderPath)\arduino-install.exe" | Out-Null
-
 echo "Success"
