@@ -27,10 +27,9 @@ sudo udevadm control --reload-rules
 
 # Make the config files exist
 cd ~/Desktop
-./Arduino.AppImage &
-PSID=$!
-sleep 20
-kill -9 $PSID
+echo "\n\n\n\nThe Arduino IDE will open soon, but when it loads to the main screen and you can select a board, close it!\n\n\n\n"
+sleep 10
+./Arduino.AppImage
 
 # Edit the config files and inject the patched micronucleus
 mkdir -p ~/.arduino15/
